@@ -1,8 +1,5 @@
 ####
 
-source .zshrc.local.special
-
-
 alias ls='ls --color=auto'
 alias ll='ls -al --color=auto'
 alias l='ls -l --color=auto'
@@ -20,11 +17,21 @@ alias grep_no_comment="grep -v '^[[:space:]]\{0,\}#' | grep -v '^$'"
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
 
+
+#some special and extra aliases, etc :
 if [ -f ~/.additional_aliases ]; then
     source ~/.additional_aliases
 else
     print "404: ~/.additional_aliases not found."
 fi
+
+if [ -f ~/.zshrc.local.special ]; then
+source .zshrc.local.special
+else
+    print "404: ~/.zshrc.local.special not found."
+fi
+
+
 
 #pkffile search:
 source /usr/share/doc/pkgfile/command-not-found.zsh
