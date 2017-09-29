@@ -16,7 +16,6 @@ alias pacman='pacman --color=auto'
 alias ranger='CURDIR=`pwd`; LASTDIR=`cat $HOME/.ranger_lastdir`; cd "$LASTDIR"; ranger --choosedir=$HOME/.ranger_lastdir; cd "$CURDIR"'
 alias saspl='wine ~/Downloads/sasplanet/SASPlanet.exe'
 alias c='clear'
-#alias wea='curl wttr.in/Karaganda'
 alias grep_no_comment="grep -v '^[[:space:]]\{0,\}#' | grep -v '^$'"
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
@@ -39,7 +38,6 @@ unsetopt prompt_cr prompt_sp
 #test:
 #need auto_cd (see in .zshrc)
 #setopt auto_cd
-#cdpath=($HOME/WinD/NBTY-SUP $HOME/Downloads $HOME/WinD/docs)
 
 
 #https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
