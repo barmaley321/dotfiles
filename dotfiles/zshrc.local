@@ -1,0 +1,74 @@
+####
+
+source .zshrc.local.special
+
+
+alias ls='ls --color=auto'
+alias ll='ls -al --color=auto'
+alias l='ls -l --color=auto'
+alias llb="ls -al --color=auto --block-size=\"'1\""
+alias xl='xscreensaver-command -lock'
+alias yd='youtube-dl --proxy socks5://127.0.0.1:9050'
+alias ff='firefox -P "noproxy"'
+alias ffproxy='firefox -P "proxy"'
+alias pacman='pacman --color=auto'
+#alias ranger='ranger --choosedir=$HOME/.ranger_lastdir; LASTDIR=`cat $HOME/.ranger_lastdir`; cd "$LASTDIR"'
+alias ranger='CURDIR=`pwd`; LASTDIR=`cat $HOME/.ranger_lastdir`; cd "$LASTDIR"; ranger --choosedir=$HOME/.ranger_lastdir; cd "$CURDIR"'
+alias saspl='wine ~/Downloads/sasplanet/SASPlanet.exe'
+alias c='clear'
+#alias wea='curl wttr.in/Karaganda'
+alias grep_no_comment="grep -v '^[[:space:]]\{0,\}#' | grep -v '^$'"
+alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+
+if [ -f ~/.additional_aliases ]; then
+    source ~/.additional_aliases
+else
+    print "404: ~/.additional_aliases not found."
+fi
+
+#pkffile search:
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+#disable "%" at the end of the line:
+unsetopt prompt_cr prompt_sp
+
+#for ruby-gems (?):
+#PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
+#test:
+#need auto_cd (see in .zshrc)
+#setopt auto_cd
+#cdpath=($HOME/WinD/NBTY-SUP $HOME/Downloads $HOME/WinD/docs)
+
+
+#https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+#(test)
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+#bindkey "^[[A" up-line-or-beginning-search # Up
+#bindkey "^[[B" down-line-or-beginning-search # Down
+#https://bbs.archlinux.org/viewtopic.php?id=149977
+#it works for now
+[[ -n "${key[Up]}"      ]]  && bindkey   "${key[Up]}"       up-line-or-beginning-search
+[[ -n "${key[Down]}"    ]]  && bindkey   "${key[Down]}"    down-line-or-beginning-search
+#
+#(test 2 is for zsh-history-substring-search)
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+#bindkey "^[[A" history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
+
+#disable sad smile (see in .zshrc):
+#http://ml.grml.org/pipermail/bugs-changes/2016-October/005085.html
+zstyle ':prompt:grml:right:setup' items #####sad-smiley battery
+
+#test nice du :-)
+function duf {
+    du -h "$@" | sort -h
+}
+alias du0='duf -d 0'
+alias du1='duf -d 1'
+alias du2='duf -d 2'

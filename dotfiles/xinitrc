@@ -1,0 +1,12 @@
+#
+xscreensaver -nosplash &
+#test copy/paste for urxvt:
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+#---
+exec awesome -c ~/.awesome/rc.lua
+#exec awesome
+#test new exec awesome:
+exec /usr/bin/awesome -c ~/.awesome/rc.lua >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
+#compositing (see in rc.lua):
+#compton -b -c --backend glx --vsync opengl-swc &

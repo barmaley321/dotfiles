@@ -1,0 +1,31 @@
+URxvt*font: xft:Liberation Mono:pixelsize=20:antialias=true:hinting=true
+URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=20:antialias=true:hinting=true
+URxvt.letterSpace: -1
+URxvt*color4: RoyalBlue
+URxvt*color12: RoyalBlue
+URxvt*scrollBar: false
+URxvt*scrollBar_right: false
+URxvt*scrollstyle: rxvt
+URxvt*foreground: White
+!URxvt*background: Blue
+!2 types of transparency, true:
+URxvt*depth: 32
+URxvt*background: rgba:0d00/0d00/0d00/cf54
+!---fake:
+!URxvt*transparent: true
+!URxvt*shading: 20
+!---
+URxvt*saveLines: 65000
+!--- test
+!--- disable iso14755 (see wiki)
+URxvt*iso14755: false
+!--- and modify copy/paste behaviour (https://bbs.archlinux.org/viewtopic.php?id=42563):
+!--- and see also new file "clipboard" (conflict with urxvt-perls package, renamed to clipboard_some)  in /usr/lib/urxvt/perl/
+URxvt*perl-ext-common: default,matcher,clipboard
+!
+Xft.hinting: true
+!!!!!!#hintnone, hintslight, hintmedium, and hintfull:
+Xft.hintstyle: hintslight
+Xft.antialias: true
+!!!!!! 142 is more or less "true" dpi for this monitor:
+Xft.dpi: 142
