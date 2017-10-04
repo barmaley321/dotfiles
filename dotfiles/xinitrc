@@ -2,7 +2,7 @@
 xscreensaver -nosplash &
 #test copy/paste for urxvt:
 autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
+autocutsel -selection PRIMARY -fork -pause 500 &
 #---
 exec awesome -c ~/.awesome/rc.lua
 #exec awesome
