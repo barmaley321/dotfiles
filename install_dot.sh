@@ -4,8 +4,8 @@
 
 dir=~/.dotfiles/dotfiles
 olddir=~/.dotfiles/dotfiles_old
-files_user="zshrc zshrc.local vimrc xinitrc Xdefaults"
-files_awesome="rc.lua theme.lua metall_wp.png"
+files_user="zshrc zshrc.local vimrc xinitrc Xresources"
+files_awesome="rc4.lua theme4.lua metall_wp.png"
 dir_awesome="awesome"
 files_mpv="mpv.conf"
 dir_mpv="config/mpv"

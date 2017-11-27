@@ -28,4 +28,4 @@ Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.antialias: true
 !!!!!! 142 is more or less "true" dpi for this monitor:
-Xft.dpi: 142
+Xft.dpi: 141

@@ -500,3 +500,5 @@ zenity
 zip
 zsh-history-substring-search-git
 zsh-syntax-highlighting
+vnstat
+xbacklight

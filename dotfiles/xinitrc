@@ -1,12 +1,14 @@
+# test https://wiki.archlinux.org/index.php/x_resources
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 #
 xscreensaver -nosplash &
 #test copy/paste for urxvt:
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork -pause 500 &
 #---
-exec awesome -c ~/.awesome/rc.lua
+exec awesome -c ~/.awesome/rc4.lua
 #exec awesome
 #test new exec awesome:
-exec /usr/bin/awesome -c ~/.awesome/rc.lua >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
+###wtf### exec /usr/bin/awesome -c ~/.awesome/rc.lua >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
 #compositing (see in rc.lua):
 #compton -b -c --backend glx --vsync opengl-swc &
