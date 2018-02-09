@@ -4,7 +4,7 @@
 
 dir=~/.dotfiles/dotfiles
 olddir=~/.dotfiles/dotfiles_old
-files_user="zshrc zshrc.local vimrc xinitrc Xresources"
+files_user="zshrc zshrc.local vimrc xinitrc Xresources wgetrc"
 files_awesome="rc4.lua theme4.lua metall_wp.png"
 dir_awesome="awesome"
 files_mpv="mpv.conf"

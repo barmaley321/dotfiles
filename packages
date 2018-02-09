@@ -196,12 +196,6 @@ keepassx2
 kvpnc
 leafpad
 less
-lib32-alsa-plugins
-lib32-libglvnd
-lib32-libwbclient
-lib32-lm_sensors
-lib32-mpg123
-lib32-smbclient
 libblockdev
 libbytesize
 libfdk-aac
@@ -502,3 +496,10 @@ zsh-history-substring-search-git
 zsh-syntax-highlighting
 vnstat
 xbacklight
+proxychains-ng
+sqlitebrowser
+gvfs-smb
+rkhunter
+pv
+borg
+fslint

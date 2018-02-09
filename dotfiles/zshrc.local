@@ -4,6 +4,7 @@ alias ls='ls --color=auto'
 alias ll='ls -al --color=auto'
 alias l='ls -l --color=auto'
 alias llb="ls -al --color=auto --block-size=\"'1\""
+alias lstoday="ls -alrt --time-style='+%D %T' | grep `date +%D`"
 alias xl='xscreensaver-command -lock'
 alias yd='youtube-dl --proxy socks5://127.0.0.1:9050'
 alias ff='firefox -P "noproxy"'
@@ -26,7 +27,7 @@ else
 fi
 
 if [ -f ~/.zshrc.local.special ]; then
-source .zshrc.local.special
+source ~/.zshrc.local.special
 else
     print "404: ~/.zshrc.local.special not found."
 fi
@@ -77,3 +78,8 @@ function duf {
 alias du0='duf -d 0'
 alias du1='duf -d 1'
 alias du2='duf -d 2'
+
+
+export ANSIBLE_NOCOWS=1
+# also see: archlinux-java
+export JAVA_HOME=/usr/lib/jvm/default
