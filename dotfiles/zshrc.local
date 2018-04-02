@@ -37,6 +37,9 @@ fi
 #pkffile search:
 source /usr/share/doc/pkgfile/command-not-found.zsh
 
+#aws cli completion
+source /usr/bin/aws_zsh_completer.sh
+
 #disable "%" at the end of the line:
 unsetopt prompt_cr prompt_sp
 
@@ -83,3 +86,7 @@ alias du2='duf -d 2'
 export ANSIBLE_NOCOWS=1
 # also see: archlinux-java
 export JAVA_HOME=/usr/lib/jvm/default
+
+#test sonarqube:
+export SONAR_SCANNER_HOME="/opt/sonar-scanner"
+export PATH="${PATH}:${SONAR_SCANNER_HOME}/bin"
