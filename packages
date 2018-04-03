@@ -504,3 +504,5 @@ pv
 borg
 fslint
 dstat
+dnsperf
+atool
