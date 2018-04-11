@@ -49,3 +49,6 @@ set expandtab
 set smartindent
 set autoindent
 set hlsearch
+
+" set paste mode:
+set paste

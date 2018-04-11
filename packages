@@ -506,3 +506,5 @@ fslint
 dstat
 dnsperf
 atool
+gramps
+cloc
