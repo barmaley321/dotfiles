@@ -90,3 +90,6 @@ export JAVA_HOME=/usr/lib/jvm/default
 #test sonarqube:
 export SONAR_SCANNER_HOME="/opt/sonar-scanner"
 export PATH="${PATH}:${SONAR_SCANNER_HOME}/bin"
+
+#oracle-xe env:
+source /usr/lib/oracle/product/11.2.0/xe/bin/oracle_env.sh
