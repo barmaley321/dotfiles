@@ -50,25 +50,16 @@ unsetopt prompt_cr prompt_sp
 #need auto_cd (see in .zshrc)
 #setopt auto_cd
 
-
-#https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
-#(test)
+#search (up/down arrows + fzf)
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-#bindkey "^[[A" up-line-or-beginning-search # Up
-#bindkey "^[[B" down-line-or-beginning-search # Down
-#https://bbs.archlinux.org/viewtopic.php?id=149977
-#it works for now
 [[ -n "${key[Up]}"      ]]  && bindkey   "${key[Up]}"       up-line-or-beginning-search
 [[ -n "${key[Down]}"    ]]  && bindkey   "${key[Down]}"    down-line-or-beginning-search
-#
-#(test 2 is for zsh-history-substring-search)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-#bindkey "^[[A" history-substring-search-up
-#bindkey '^[[B' history-substring-search-down
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 #disable sad smile (see in .zshrc):
 #http://ml.grml.org/pipermail/bugs-changes/2016-October/005085.html
@@ -81,7 +72,6 @@ function duf {
 alias du0='duf -d 0'
 alias du1='duf -d 1'
 alias du2='duf -d 2'
-
 
 export ANSIBLE_NOCOWS=1
 # also see: archlinux-java
