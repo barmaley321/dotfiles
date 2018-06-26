@@ -297,7 +297,7 @@ php-sqlite
 pidgin
 pidgin-sipe
 pinta
-pkg-config
+pkgconf
 pkgfile
 playitslowly
 ponysay
@@ -369,7 +369,7 @@ solfege
 soundfont-fluid
 spandsp
 spawn-fcgi
-spek
+spek-git
 sshfs
 sshpass
 st
@@ -510,3 +510,8 @@ gramps
 cloc
 tig
 gromit-mpx
+aws-cli
+testdisk
+hub
+hyx
+zoom

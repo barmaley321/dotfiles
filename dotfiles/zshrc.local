@@ -18,7 +18,6 @@ alias grep_no_comment="grep -v '^[[:space:]]\{0,\}#' | grep -v '^$'"
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
 
-
 #some special and extra aliases, etc :
 if [ -f ~/.additional_aliases ]; then
     source ~/.additional_aliases
@@ -45,6 +44,7 @@ unsetopt prompt_cr prompt_sp
 
 #for ruby-gems (?):
 #PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+#export PATH="${PATH}:/home/my_user/bin"
 
 #test:
 #need auto_cd (see in .zshrc)
@@ -81,3 +81,8 @@ export JAVA_HOME=/usr/lib/jvm/default
 export SONAR_SCANNER_HOME="/opt/sonar-scanner"
 export PATH="${PATH}:${SONAR_SCANNER_HOME}/bin"
 
+#top 10 app mem:
+function topmem {
+    ps aux --sort=-%mem | awk 'NR<=5{print $0}'
+}
+#alias topmem10='topmem 10'
