@@ -77,6 +77,9 @@ function topmem {
 #
 
 #test diff characters:
-function diffchar {
+function diffchar_string {
     diff -u  <(echo "$1" ) <(echo "$2") | colordiff | /usr/share/git/diff-highlight/diff-highlight
+}
+function diffchar_file {
+    diff -u  <(cat "$1" ) <(cat "$2") | colordiff | /usr/share/git/diff-highlight/diff-highlight
 }
