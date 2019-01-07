@@ -83,3 +83,5 @@ function diffchar_string {
 function diffchar_file {
     diff -u  <(cat "$1" ) <(cat "$2") | colordiff | /usr/share/git/diff-highlight/diff-highlight
 }
+
+#PS1="\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]\[\033[s\]\[\033[1;\$((COLUMNS-5))f\]\$(date +%H:%M)\[\033[u\]"
