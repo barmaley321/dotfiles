@@ -15,6 +15,8 @@ alias ranger='CURDIR=`pwd`; LASTDIR=`cat $HOME/.ranger_lastdir`; cd "$LASTDIR"; 
 alias saspl='wine ~/Downloads/sasplanet/SASPlanet.exe'
 alias c='clear'
 alias grep_no_comment="grep -v '^[[:space:]]\{0,\}#' | grep -v '^$'"
+#almost work:
+alias grep_ip="grep -Ev '([0-9]{4})' | grep -Ev '([3-9][0-9][0-9])' | grep -E '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'"
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
 
@@ -48,6 +50,10 @@ zle -N down-line-or-beginning-search
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+#jump over words using ctrl+left/right in urxvt:
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 #disable sad smile (see in .zshrc):
 #http://ml.grml.org/pipermail/bugs-changes/2016-October/005085.html
