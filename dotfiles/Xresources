@@ -1,5 +1,5 @@
-URxvt*font: xft:Liberation Mono:pixelsize=20:antialias=true:hinting=true
-URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=20:antialias=true:hinting=true
+URxvt*font: xft:Liberation Mono:pixelsize=18:antialias=true:hinting=true
+URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=18:antialias=true:hinting=true
 URxvt.letterSpace: -1
 URxvt*color4: RoyalBlue
 URxvt*color12: RoyalBlue
