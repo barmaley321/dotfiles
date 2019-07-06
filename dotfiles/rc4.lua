@@ -550,6 +550,32 @@ awful.rules.rules = {
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
+
+
+    -- First use xprop to display all the properties of the window. Instance is now the first entry of wm_class and the second is class itself (yes this is a bit obscure).
+    -- urxvt on full screen
+    { rule = { class = "URxvt" },
+      properties = { maximized_vertical = true, maximized_horizontal = true } },
+
+    -- transmission dialog centered
+    { rule = { class = "Transmission-gtk" },
+      { role = "tr-info"}, 
+      properties = { floating = true },
+      callback = function (c)
+        awful.placement.centered(c,nil)
+      end
+    },
+
+    { rule = { class = "Firefox" },
+      { instance = "Dialog"}, 
+      properties = { floating = true },
+      callback = function (c)
+        awful.placement.centered(c,nil)
+      end
+    },
+
+
+
 }
 -- }}}
 
@@ -643,14 +669,16 @@ end
 --run_once("xscreensaver","-no-splash")
 --run_once("pidgin",nil,nil,2)
 --run_once("wicd-client",nil,"/usr/bin/python2 -O /usr/share/wicd/gtk/wicd-client.py")
-run_once("cbatticon",nil,nil,1)
+--run_once("cbatticon",nil,nil,1)
 run_once("nm-applet",nil,nil,1)
 run_once("urxvt",nil,nil,1)
 run_once("goldendict",nil,nil,2)
 run_once("keepassx2",nil,nil,1)
 --run_once("chromium",nil,nil,2)
 --test:
-run_once("compton","-b -c --backend glx --vsync opengl-swc",nil,1)
+run_once("compton","-b -c --backend glx",nil,1)
+
+--run_once("compton","-b -c --backend glx --vsync opengl-swc",nil,1)
 
 
 -- }}}
