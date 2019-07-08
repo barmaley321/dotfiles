@@ -524,3 +524,5 @@ python-sqlparse
 vim-apprentice
 exa
 tig
+pacutils
+lostfiles
