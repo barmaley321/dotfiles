@@ -34,6 +34,7 @@ unsetopt prompt_cr prompt_sp
 
 #for ruby-gems (?):
 #PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 #export PATH="${PATH}:/home/my_user/bin"
 
 #test:
