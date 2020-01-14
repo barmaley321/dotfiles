@@ -527,3 +527,7 @@ tig
 pacutils
 lostfiles
 ctop
+screenfetch
+sshpass
+openldap
+xsv
