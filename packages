@@ -520,11 +520,9 @@ mps-youtube
 fakepkg
 entr
 the_silver_searcher
-<<<<<<< HEAD
 pulsemixer
 etcher-bin
 woeusb
-=======
 python-sqlparse
 vim-apprentice
 exa
@@ -538,4 +536,3 @@ openldap
 xsv
 xml-coreutils
 datamash
->>>>>>> vbox
