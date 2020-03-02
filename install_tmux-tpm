@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "note: enter prefix+I to reload tmux configuration"
+echo "resurrect + continuum will be installed automatically after reload"
+
+#install tmux plugin manager:
+mkdir -p ~/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+
+

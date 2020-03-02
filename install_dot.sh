@@ -4,7 +4,7 @@
 
 dir=~/.dotfiles/dotfiles
 olddir=~/.dotfiles/dotfiles_old
-files_user="zshrc zshrc.local vimrc xinitrc Xresources wgetrc"
+files_user="zshrc zshrc.local vimrc xinitrc Xresources wgetrc tmux.conf"
 files_awesome="rc4.lua theme4.lua metall_wp.png"
 dir_awesome="awesome"
 files_mpv="mpv.conf"
@@ -19,7 +19,7 @@ echo "Creating $olddir for backup of any existing dotfiles in ~"
 mkdir -p $olddir
 echo "...done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
+# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files_user; do
     if [ ! -L ~/.$file ]; then
         echo "Moving any existing dotfiles from ~ to $olddir"
@@ -32,7 +32,7 @@ for file in $files_user; do
     fi
 done
 
-# move any existing awesome config files to dotfiles_old directory, then create symlinks 
+# move any existing awesome config files to dotfiles_old directory, then create symlinks
 for file in $files_awesome; do
     if [ ! -L ~/.$dir_awesome/$file ]; then
         echo "Moving any existing configs from ~/.$dir_awesome/ to $olddir"
@@ -45,7 +45,7 @@ for file in $files_awesome; do
     fi
 done
 
-# move any existing mpv config files to dotfiles_old directory, then create symlinks 
+# move any existing mpv config files to dotfiles_old directory, then create symlinks
 for file in $files_mpv; do
     if [ ! -L ~/.$dir_mpv/$file ]; then
         echo "Moving any existing configs from ~/.$dir_mpv/ to $olddir"
