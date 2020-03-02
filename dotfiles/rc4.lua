@@ -292,7 +292,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey },  "Print",
               function()		
 	      awful.util.spawn_with_shell
-	        ("sleep 0.5 && escrotum /tmp/foo.png -s && xclip -selection clipboard -t image/png -i /tmp/foo.png && rm /tmp/foo.png")
+	        ("sleep 0.5 && escrotum /tmp/foo.png -s --selection-delay 1 && xclip -selection clipboard -t image/png -i /tmp/foo.png && rm /tmp/foo.png")
 	      end),
 
 
@@ -548,8 +548,8 @@ awful.rules.rules = {
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+     { rule = { class = "Firefox" },
+       properties = { screen = 1, tag = "3" } },
 
 
     -- First use xprop to display all the properties of the window. Instance is now the first entry of wm_class and the second is class itself (yes this is a bit obscure).
@@ -558,7 +558,7 @@ awful.rules.rules = {
       properties = { maximized_vertical = true, maximized_horizontal = true } },
 
     -- transmission dialog centered
-    { rule = { class = "Transmission-gtk" },
+    { rule =  { class = "Transmission-gtk"},
       { role = "tr-info"}, 
       properties = { floating = true },
       callback = function (c)
@@ -566,13 +566,14 @@ awful.rules.rules = {
       end
     },
 
-    { rule = { class = "Firefox" },
-      { instance = "Dialog"}, 
-      properties = { floating = true },
-      callback = function (c)
-        awful.placement.centered(c,nil)
-      end
-    },
+    --{ rule =  { class = "Firefox" },
+      --{ instance = "Dialog"}, 
+      --properties = { maximized_vertical = true, maximized_horizontal = true } },
+      --properties = { floating = true },
+      --callback = function (c)
+        --awful.placement.centered(c,nil)
+      --end
+    --},
 
 
 
@@ -673,7 +674,7 @@ end
 run_once("nm-applet",nil,nil,1)
 run_once("urxvt",nil,nil,1)
 run_once("goldendict",nil,nil,2)
-run_once("keepassx2",nil,nil,1)
+run_once("keepassxc",nil,nil,1)
 --run_once("chromium",nil,nil,2)
 --test:
 run_once("compton","-b -c --backend glx",nil,1)
