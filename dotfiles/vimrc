@@ -140,7 +140,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme apprentice "ron "desert
+    colorscheme ron "apprentice "ron "desert
 catch
 endtry
 

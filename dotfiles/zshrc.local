@@ -15,6 +15,7 @@ alias ranger='CURDIR=`pwd`; LASTDIR=`cat $HOME/.ranger_lastdir`; cd "$LASTDIR"; 
 alias saspl='wine ~/Downloads/sasplanet/SASPlanet.exe'
 alias c='clear'
 alias grep_no_comment="grep -v '^[[:space:]]\{0,\}#' | grep -v '^$'"
+alias grep_email='grep -E "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"'
 #almost work:
 alias grep_ip="grep -Ev '([0-9]{4})' | grep -Ev '([3-9][0-9][0-9])' | grep -E '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'"
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
@@ -31,6 +32,11 @@ source /usr/share/doc/pkgfile/command-not-found.zsh
 
 #aws cli completion
 source /usr/bin/aws_zsh_completer.sh
+
+#additional aliases
+source ~/.zshrc.local.aliases
+#additional stuff
+#source ~/.zshrc.local.stuff
 
 #disable "%" at the end of the line:
 unsetopt prompt_cr prompt_sp
