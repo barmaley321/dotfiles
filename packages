@@ -536,3 +536,5 @@ openldap
 xsv
 xml-coreutils
 datamash
+gnu-netcat
+socat

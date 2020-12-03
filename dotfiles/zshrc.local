@@ -17,12 +17,13 @@ alias c='clear'
 alias grep_no_comment="grep -v '^[[:space:]]\{0,\}#' | grep -v '^$'"
 alias grep_email='grep -E "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"'
 #almost work:
-alias grep_ip="grep -Ev '([0-9]{4})' | grep -Ev '([3-9][0-9][0-9])' | grep -E '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'"
+alias grep_ip="grep -E '((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'"
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
 alias mem_eaten='free | grep Mem | awk '\''{print $3/$2 * 100.0}'\'''
 #convert list of, e.g. id-s to upper case, bracket them and add commar; useful in sql-ing
 alias sqlids='tr '\''[:lower:]'\'' '\''[:upper:]'\'' | awk -v d="'\''" '\''{print d $1 d ","}'\'' | sed '\''$ s/.$//'\'''
+alias where_clause='awk -v d="'\''" '\''{print d $1 d "or"}'\'' | sed '\''$ s/..$//'\'''
 alias trlow='tr '\''[:upper:]'\'' '\''[:lower:]'\'''
 alias trup='tr '\''[:lower:]'\'' '\''[:upper:]'\'''
 
